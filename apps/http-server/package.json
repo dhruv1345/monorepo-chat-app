@@ -3,10 +3,32 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "start": "node index.js",
+    "dev": "tsc -b && node index.js",
+    "test": "jest --config jest.config.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "format": "npm run prettier && npm run lint:fix",
+    "format:check": "npm run prettier:check && npm run lint",
+    "format:fix": "npm run prettier:fix && npm run lint:fix",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:debug": "node --inspect-brk ./node_modules/.bin/jest --runInBand",
+    "test:debug:watch": "node --inspect-brk ./node_modules/.bin/jest --watch --runInBand",
+    "test:debug:coverage": "node --inspect-brk ./node_modules/.bin/jest --coverage --runInBand",
+    "test:debug:coverage:watch": "node --inspect-brk ./node_modules/.bin/jest --coverage --watch --runInBand"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "express": "^4.21.2"
+  }
 }

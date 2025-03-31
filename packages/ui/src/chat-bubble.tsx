@@ -6,9 +6,10 @@ import { CSSProperties } from "react";
 interface ChatBubbleProps {
   message: string;
   sender: "user" | "other";
+  defaultValue?: string;
 }
 
-export function ChatBubble({ message, sender }: ChatBubbleProps) {
+export function ChatBubble({ message, sender, defaultValue }: ChatBubbleProps) {
   const styles: { [key: string]: CSSProperties } = {
     bubbleContainer: {
       display: "flex",
